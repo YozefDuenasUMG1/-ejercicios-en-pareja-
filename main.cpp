@@ -1,24 +1,21 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
-    float precioOriginal, descuento, precioFinal;
+    cout << "Te gustaria saber el producto de los primeros 10 numeros naturales?" << endl;
+    cout << "De todas maneras te lo voy a mostrar :>" << endl;
+    int producto = 1;
 
-    // Solicitar el precio original y el descuento al usuario
-    std::cout << "Ingrese el precio original del producto: ";
-    std::cin >> precioOriginal;
+    int contador = 1;
 
-    std::cout << "Ingrese el porcentaje de descuento: ";
-    std::cin >> descuento;
+    while (contador <= 10) {
+        producto *= contador;
+        contador++;
+    }
+    cout << "El producto de los primeros diez numeros naturales es: " << producto << endl;
+    cout << "Chao, espero haberte ayudado colega :D" << endl;
 
-    // Calcular el descuento
-    descuento = precioOriginal * (descuento / 100);
-
-    // Calcular el precio final
-    precioFinal = precioOriginal - descuento;
-
-    // Mostrar el precio original, el descuento, y el precio final
-    std::cout << "Precio original: Q" << precioOriginal << std::endl;
-    std::cout << "Descuento: Q" << descuento << std::endl;
-    std::cout << "Precio final: Q" << precioFinal << std::endl;
-
+    return 0;
 }
+
