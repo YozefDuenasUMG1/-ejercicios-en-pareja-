@@ -1,21 +1,33 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    cout << "Te gustaria saber el producto de los primeros 10 numeros naturales?" << endl;
-    cout << "De todas maneras te lo voy a mostrar :>" << endl;
-    int producto = 1;
+    int numero, contadorPrimos = 0;
 
-    int contador = 1;
+    // Bucle para recorrer los números del 2 al 100
+    for (numero = 2; numero <= 100; numero++) {
+        bool esPrimo = true;
 
-    while (contador <= 10) {
-        producto *= contador;
-        contador++;
+        // Bucle para comprobar si el número es divisible por algún número entre 2 y su raíz cuadrada
+        for (int divisor = 2; divisor * divisor <= numero; divisor++) {
+            if (numero % divisor == 0) {
+                esPrimo = false;
+                break;
+            }
+        }
+
+        // Si el número es primo, se imprime y se aumenta el contador
+        if (esPrimo) {
+            std::cout << numero << " ";
+            contadorPrimos++;
+
+            // Se comprueba si ya se han encontrado los 10 números primos
+            if (contadorPrimos == 10) {
+                break;
+            }
+        }
     }
-    cout << "El producto de los primeros diez numeros naturales es: " << producto << endl;
-    cout << "Chao, espero haberte ayudado colega :D" << endl;
+
+    std::cout << std::endl;
 
     return 0;
 }
-
